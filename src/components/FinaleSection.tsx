@@ -18,8 +18,8 @@ export function FinaleSection() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(20,184,166,0.12),transparent_55%)]" />
       <div className="relative mx-auto max-w-3xl text-center">
         <p className="font-display text-[clamp(1.5rem,5vw,2.75rem)] font-medium leading-snug text-stone-900">
-          France, lac, falaises, apéros.{" "}
-          <span className="text-teal-800">Votez Verdon.</span>
+          Le Verdon, c&apos;est le prétexte.{" "}
+          <span className="text-teal-800">Vous, c&apos;est la raison.</span>
         </p>
         {placeholders > 0 ? (
           <p className="mx-auto mt-5 max-w-lg font-sans text-sm text-stone-600">
