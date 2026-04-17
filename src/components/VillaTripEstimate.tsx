@@ -2,7 +2,7 @@ import {
   accommodationPerPersonEur,
   roundTripEuro,
   TRIP_HEADCOUNT,
-  TRIP_TRANSPORT_EUR_PER_PERSON,
+  transportPerPersonEur,
   tripTotalPerPersonRange,
   villaAccommodationTotalEur,
 } from "@/config/tripEstimate";
@@ -23,7 +23,7 @@ export function VillaTripEstimate({ villa, variant = "compact" }: Props) {
   const range = tripTotalPerPersonRange(villa, TRIP_HEADCOUNT);
   const low = roundTripEuro(range.low);
   const high = roundTripEuro(range.high);
-  const transport = TRIP_TRANSPORT_EUR_PER_PERSON;
+  const transport = transportPerPersonEur(TRIP_HEADCOUNT);
 
   if (variant === "compact") {
     return (
@@ -33,7 +33,7 @@ export function VillaTripEstimate({ villa, variant = "compact" }: Props) {
           <span className="text-base font-normal text-stone-600">/ pers.</span>
         </p>
         <p className="font-sans text-xs text-stone-500">
-          Logement + transport ({TRIP_HEADCOUNT} pers.) — hors repas & activités
+          Logement + transport ({TRIP_HEADCOUNT} pers.)
         </p>
         <p className="font-sans text-sm text-stone-600">
           Dont logement :{" "}
@@ -54,13 +54,11 @@ export function VillaTripEstimate({ villa, variant = "compact" }: Props) {
   const totalRent = villaAccommodationTotalEur(villa);
 
   return (
-    <div className="mt-6 rounded-xl border border-teal-200/80 bg-teal-50/50 p-5 sm:p-6">
+    <div className="mt-10 rounded-xl border border-teal-200/80 bg-teal-50/50 p-5 sm:p-6">
       <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-teal-800">
         Budget logement + transport (estimatif)
       </p>
-      <p className="mt-2 font-sans text-sm text-stone-600">
-        Pour {TRIP_HEADCOUNT} personnes. Repas et activités non inclus.
-      </p>
+      <p className="mt-2 font-sans text-sm text-stone-600">Pour {TRIP_HEADCOUNT} personnes.</p>
       <ul className="mt-4 space-y-2.5 font-sans text-sm text-stone-800">
         <li className="flex justify-between gap-4 border-b border-teal-100 pb-2">
           <span className="text-stone-600">Logement / pers.</span>
@@ -77,7 +75,7 @@ export function VillaTripEstimate({ villa, variant = "compact" }: Props) {
         <li className="flex justify-between gap-4 border-b border-teal-100 pb-2">
           <span className="text-stone-600">Transport AR / pers.</span>
           <span className="font-medium">
-            {formatEuro(transport.low)} – {formatEuro(transport.high)} €
+            {formatEuro(roundTripEuro(transport.low))} – {formatEuro(roundTripEuro(transport.high))} €
           </span>
         </li>
         <li className="flex justify-between gap-4 border-t border-teal-200 pt-3 font-display text-lg text-teal-900">

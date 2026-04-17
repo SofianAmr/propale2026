@@ -53,38 +53,35 @@ export default async function VillaPage({ params }: Props) {
         <p className="mt-2 font-sans text-sm text-stone-600">
           Deux visuels + fiche complète sur Airbnb.
         </p>
-        {villa.priceTotalEur != null ? (
-          <p className="mt-4 font-display text-2xl text-teal-800 sm:text-3xl">
-            {formatEuro(villa.priceTotalEur)} €
-            <span className="ml-2 font-sans text-sm font-normal text-stone-600">
-              pour le séjour (annonce)
-              {villa.extraGroupFeesEur != null && villa.extraGroupFeesEur > 0 ? (
-                <span className="block mt-1 text-stone-500">
-                  + {formatEuro(villa.extraGroupFeesEur)} € frais groupe (linge / ménage…)
-                </span>
-              ) : null}
-            </span>
-          </p>
-        ) : null}
-
-        <VillaTripEstimate villa={villa} variant="detailed" />
-
-        {villa.pitch ? (
-          <div className="mt-8 rounded-xl border border-stone-200 bg-white p-5 shadow-sm sm:p-6">
-            <p className="font-sans text-sm leading-relaxed text-stone-800 sm:text-base">
-              {villa.pitch.intro}
+        <div
+          className={`mt-4 flex flex-wrap items-start gap-4 ${
+            villa.priceTotalEur != null ? "justify-between" : "justify-start"
+          }`}
+        >
+          {villa.priceTotalEur != null ? (
+            <p className="min-w-0 flex-1 font-display text-2xl text-teal-800 sm:text-3xl">
+              {formatEuro(villa.priceTotalEur)} €
+              <span className="ml-2 font-sans text-sm font-normal text-stone-600">
+                pour le séjour (annonce)
+                {villa.extraGroupFeesEur != null && villa.extraGroupFeesEur > 0 ? (
+                  <span className="block mt-1 text-stone-500">
+                    + {formatEuro(villa.extraGroupFeesEur)} € frais groupe (linge / ménage…)
+                  </span>
+                ) : null}
+              </span>
             </p>
-            <ul className="mt-4 list-inside list-disc space-y-2 font-sans text-sm text-stone-700 marker:text-teal-800 sm:text-base">
-              {villa.pitch.items.map((line) => (
-                <li key={line} className="pl-0.5">
-                  {line}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
+          ) : null}
+          <a
+            href={villa.airbnbUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center justify-center self-start rounded-xl bg-teal-800 px-5 py-2.5 font-sans text-sm font-semibold text-white shadow-sm transition hover:bg-teal-900 sm:px-6 sm:py-3"
+          >
+            Voir sur Airbnb
+          </a>
+        </div>
 
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5">
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-5">
           <li className="relative aspect-4/3 overflow-hidden rounded-xl bg-stone-200 shadow-sm ring-1 ring-stone-200/80">
             <Image
               src={villaAssetUrl(a)}
@@ -107,16 +104,22 @@ export default async function VillaPage({ params }: Props) {
           </li>
         </ul>
 
-        <p className="mt-10">
-          <a
-            href={villa.airbnbUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-xl bg-teal-800 px-6 py-3.5 font-sans text-sm font-semibold text-white shadow-sm transition hover:bg-teal-900"
-          >
-            Voir sur Airbnb
-          </a>
-        </p>
+        {villa.pitch ? (
+          <div className="mt-8 rounded-xl border border-stone-200 bg-white p-5 shadow-sm sm:p-6">
+            <p className="font-sans text-sm leading-relaxed text-stone-800 sm:text-base">
+              {villa.pitch.intro}
+            </p>
+            <ul className="mt-4 list-inside list-disc space-y-2 font-sans text-sm text-stone-700 marker:text-teal-800 sm:text-base">
+              {villa.pitch.items.map((line) => (
+                <li key={line} className="pl-0.5">
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        <VillaTripEstimate villa={villa} variant="detailed" />
       </article>
 
       <footer className="border-t border-stone-200 bg-stone-100 px-4 py-8 text-center font-sans text-sm text-stone-600 sm:px-10 sm:py-10">

@@ -59,7 +59,6 @@ export const villas: Villa[] = [
     airbnbUrl:
       "https://www.airbnb.fr/rooms/52241576?check_in=2026-08-24&check_out=2026-09-01&guests=1&adults=10&s=67&unique_share_id=7df3ff0f-4224-4f5c-b497-70c2adedb006",
     priceTotalEur: 5835,
-    extraGroupFeesEur: 370,
     pitch: {
       intro:
         "Au cœur d’une propriété d’environ 4 000 m², entre restanques, oliviers et pins : villa tout confort où se mêlent authenticité et modernité, avec vue dégagée.",
@@ -67,7 +66,7 @@ export const villas: Villa[] = [
         "Plusieurs chambres et espaces nuit (baignoire, douches, mezzanines — détail des couchages sur Airbnb) ; grande pièce à vivre très lumineuse (une partie sans volet)",
         "Baby-foot · terrain de pétanque · cuisine équipée (gros électroménager) · buanderie (lave-linge, sèche-linge, fer, sèche-cheveux)",
         "Grande terrasse · terrasse couverte avec salon de jardin · barbecue gaz · une bouteille offerte · lits faits à l’arrivée",
-        "À prévoir sur place : 370 € pour linge + ménage (à régler à l’arrivée selon l’annonce) · lit bébé & chaise haute gratuits sur demande",
+        "Linge / ménage éventuels sur place selon l’annonce · lit bébé & chaise haute gratuits sur demande",
         "Consigne hôte : le local technique de la piscine n’est pas accessible aux voyageurs",
         "Verdon & lac de Ste-Croix ~45 min · Thoronet ~20 min · Sillans ~25 min · Lorgues (marché mardi) · nombreux domaines viticoles, spa, adresses gourmandes (voir Airbnb)",
       ],
@@ -84,7 +83,8 @@ export const villas: Villa[] = [
       "Mas des Heures Dorées, villa provençale avec piscine et jardin",
       "Terrasse couverte, pierre et bois, grande table pour repas dehors",
     ],
-    airbnbUrl: "https://www.airbnb.fr/",
+    airbnbUrl:
+      "https://www.airbnb.fr/rooms/1470981380414290754?check_in=2026-08-24&check_out=2026-09-01&guests=1&adults=9&s=67&unique_share_id=7c18c271-e327-44e8-8bbd-4ccd5e6236b9",
     priceTotalEur: 5422,
     pitch: {
       intro:
@@ -119,6 +119,32 @@ export const villas: Villa[] = [
         "Parking privé · espace pour s’amuser (terrain de foot possible sur la propriété selon l’annonce)",
         "À proximité : lac de Saint-Cassien (pêche, baignade, nautisme) · golf de Terre Blanche (18 trous)",
         "Plages les plus proches côté Fréjus / Saint-Raphaël et Cannes — détail des trajets sur Airbnb",
+      ],
+    },
+  },
+  {
+    slug: "eden-balinais-le-muy",
+    title: "Eden Balinais 9 pers Piscine Chauffée & Jacuzzi",
+    photos: [
+      "eden-balinais-piscine-jacuzzi.png",
+      "eden-balinais-piste-petanque.png",
+    ],
+    photoAlts: [
+      "Piscine, terrasse bois, baby-foot et jardin tropical avec palmiers",
+      "Piste de pétanque privée, bordures en bois et jardin autour de la villa",
+    ],
+    airbnbUrl:
+      "https://www.airbnb.fr/rooms/1396300084309912138?check_in=2026-08-24&check_out=2026-09-01&guests=10&adults=9&s=67&unique_share_id=9a96711d-25ba-4332-a6ed-680d092ea634",
+    priceTotalEur: 4996,
+    pitch: {
+      intro:
+        "À 20 min des plages et 45 min de Saint-Tropez, villa balinaise de luxe pour 9 personnes au Muy : jardin tropical 100 % privé, sans vis-à-vis, pour une parenthèse exotique entre Sainte-Maxime et Saint-Tropez.",
+      items: [
+        "Suite parentale, chambres, climatisation, Wi-Fi fibre, cuisine entièrement équipée",
+        "Piscine chauffée (avril à octobre), jacuzzi 5 places, terrasse ensoleillée, salon extérieur, BBQ, pétanque, baby-foot",
+        "Parking privé · borne de recharge électrique (option selon l’annonce)",
+        "Accueil personnalisé sur place · check-in à partir de 17h · check-out jusqu’à 10h · hôte joignable pendant le séjour",
+        "Lits faits, linge et serviettes fournis · usage touristique ; activité pro ou commerciale uniquement avec accord préalable (voir annonce)",
       ],
     },
   },

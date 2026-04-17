@@ -2,7 +2,6 @@ import { DatesBudgetSection } from "@/components/DatesBudgetSection";
 import { EconomieSection } from "@/components/EconomieSection";
 import { FinaleSection } from "@/components/FinaleSection";
 import { HeroSection } from "@/components/HeroSection";
-import { PourToutLeMondeSection } from "@/components/PourToutLeMondeSection";
 import { VillaSection } from "@/components/VillaSection";
 import { WhyVerdonSection } from "@/components/WhyVerdonSection";
 import { gorgesGallery } from "@/config/gallery";
@@ -13,7 +12,6 @@ export default function Home() {
       <HeroSection />
       <VillaSection />
       <WhyVerdonSection imageFiles={gorgesGallery} />
-      <PourToutLeMondeSection />
       <EconomieSection />
       <DatesBudgetSection />
       <FinaleSection />

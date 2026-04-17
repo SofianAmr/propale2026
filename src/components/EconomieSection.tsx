@@ -1,75 +1,56 @@
-export function EconomieSection() {
-  const rows = [
-    {
-      label: "Paysage & eau",
-      nous: "Canyon, lac, baignade naturelle",
-      autres: "Souvent mer OU montagne, rarement les deux",
-    },
-    {
-      label: "Trajet depuis la région",
-      nous: "Route raisonnable, un seul fuseau",
-      autres: "Côte basque / Atlantique : plus long",
-    },
-    {
-      label: "Météo été",
-      nous: "Ensoleillé, sec, prévisible à l’échelle de la semaine",
-      autres: "Bretagne / nord : plus capricieux",
-    },
-    {
-      label: "Charge mentale",
-      nous: "Un lieu unique, peu de changement de base",
-      autres: "Road-trips : plus de logistique",
-    },
-  ];
+const ARGUMENTS: { title: string; body: string }[] = [
+  {
+    title: "Activités",
+    body:
+      "Randonnées, via ferrata, kayak, baignade, pédalo… tout est " +
+      "là pour varier les journées sans repartir à zéro chaque matin.",
+  },
+  {
+    title: "Cuisine & terroir",
+    body:
+      "Vin local, saucisson, olives, fougasse : le plein de " +
+      "saveurs françaises entre deux sorties.",
+  },
+  {
+    title: "Organisation & transports",
+    body:
+      "Un seul lieu de base, des trajets courts une fois sur place — " +
+      "moins de logistique, plus de temps pour profiter.",
+  },
+  {
+    title: "Prix",
+    body:
+      "Pour ce qu’on embarque (lieu, durée, activités), un prix " +
+      "imbattable — le détail des lignes est plus bas, les montants se " +
+      "décident ensemble.",
+  },
+];
 
+export function EconomieSection() {
   return (
     <section className="border-y border-stone-200 bg-white px-4 py-14 sm:px-6 sm:py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-6xl">
         <h2 className="font-display text-2xl text-stone-900 sm:text-3xl md:text-4xl">
-          L’argument économique
+          Les arguments
         </h2>
         <p className="mt-2 max-w-2xl font-sans text-sm text-stone-600 sm:text-base">
-          Comparatif simple — pas pour dénigrer les autres idées, pour cadrer
-          honnêtement ce qu’on propose.
+          En résumé, ce qui fait la différence pour ce séjour au Verdon.
         </p>
-        <div className="mt-10 overflow-x-auto rounded-xl bg-stone-50/80 shadow-sm ring-1 ring-stone-200">
-          <table className="w-full min-w-[520px] border-collapse text-left font-sans text-sm">
-            <thead>
-              <tr className="border-b border-stone-200 bg-stone-100">
-                <th className="px-4 py-3 font-medium text-stone-500 sm:px-5">
-                  Critère
-                </th>
-                <th className="px-4 py-3 font-medium text-teal-800 sm:px-5">
-                  Verdon (cette propale)
-                </th>
-                <th className="px-4 py-3 font-medium text-stone-600 sm:px-5">
-                  Autres pistes fréquentes
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-white">
-              {rows.map((row) => (
-                <tr
-                  key={row.label}
-                  className="border-b border-stone-100 last:border-0"
-                >
-                  <td className="px-4 py-3.5 text-stone-500 sm:px-5">
-                    {row.label}
-                  </td>
-                  <td className="px-4 py-3.5 text-stone-900 sm:px-5">
-                    {row.nous}
-                  </td>
-                  <td className="px-4 py-3.5 text-stone-600 sm:px-5">
-                    {row.autres}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="mt-4 font-sans text-xs text-stone-500">
-          Budget détaillé plus bas — les montants se décident ensemble.
-        </p>
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:gap-5">
+          {ARGUMENTS.map((item) => (
+            <li
+              key={item.title}
+              className="rounded-xl bg-stone-50/80 p-5 shadow-sm ring-1 ring-stone-200 sm:p-6"
+            >
+              <h3 className="font-sans text-sm font-semibold text-teal-800">
+                {item.title}
+              </h3>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-stone-700">
+                {item.body}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

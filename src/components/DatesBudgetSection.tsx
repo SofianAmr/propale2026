@@ -25,12 +25,11 @@ export function DatesBudgetSection() {
             </p>
             <p className="mt-2 font-sans text-sm text-stone-600">2026 · 8 nuits</p>
             <p className="mt-6 font-sans text-sm leading-relaxed text-stone-600">
-              Groupe visé :{" "}
+              Groupe :{" "}
               <strong className="font-medium text-stone-800">
-                8 personnes (base des calculs) · jusqu’à 10 selon qui peut
-              </strong>
-              . Les totaux « par personne » partent de{" "}
-              <strong className="font-medium text-stone-800">{TRIP_HEADCOUNT} personnes</strong>.
+                {TRIP_HEADCOUNT} personnes
+              </strong>{" "}
+              pour tous les calculs ci-dessous (les annonces peuvent afficher une capacité plus élevée).
             </p>
           </div>
           <div>
@@ -39,7 +38,7 @@ export function DatesBudgetSection() {
             </p>
             <p className="mt-2 font-sans text-sm text-stone-600">
               <strong className="font-medium text-stone-800">Logement + transport</strong> par personne pour chaque
-              villa (repas et activités en sus).
+              villa.
             </p>
           </div>
         </div>

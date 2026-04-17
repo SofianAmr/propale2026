@@ -18,9 +18,9 @@ export function VillaSection() {
           Les villas
         </h2>
         <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-stone-600 sm:text-base">
-          Quatre pistes avec photos, lien Airbnb et{" "}
-          <strong className="font-medium text-stone-800">estimation logement + transport / personne</strong>{" "}
-          (hors repas & activités). Détail dans{" "}
+          Cinq pistes avec photos, lien Airbnb et{" "}
+          <strong className="font-medium text-stone-800">estimation logement + transport / personne</strong>. Détail
+          dans{" "}
           <a href="#dates-budget" className="font-medium text-teal-800 underline-offset-2 hover:underline">
             Dates & budget
           </a>
