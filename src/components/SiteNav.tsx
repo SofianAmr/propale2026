@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const LINKS = [
@@ -15,9 +16,17 @@ export function SiteNav() {
       >
         <Link
           href="/"
-          className="font-display text-lg font-semibold tracking-tight text-stone-900 sm:text-xl"
+          className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-stone-900 sm:gap-2.5 sm:text-xl"
         >
-          Propale Verdon
+          <Image
+            src="/icon.png"
+            alt=""
+            width={250}
+            height={411}
+            className="h-8 w-auto shrink-0 object-contain sm:h-9"
+            priority
+          />
+          <span>Propale Verdon</span>
         </Link>
         <ul className="flex flex-wrap items-center justify-end gap-x-1 gap-y-1 sm:gap-x-2">
           {LINKS.map(({ href, label }) => (
